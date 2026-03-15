@@ -1,12 +1,13 @@
-const account = document.getElementById('account');
-const login = document.getElementById('Log-in');
-const formlog= document.getElementById('login-form');
+account = document.getElementById('account');
+login = document.getElementById('Log-in');
+formlog= document.getElementById('login-form');
 
-const register = document.getElementById('Sign-up');
-const formsign = document.getElementById('sign-up-form');
+register = document.getElementById('Sign-up');
+formsign = document.getElementById('sign-up-form');
 
-const dangky = document.getElementById('submit-register');
-const dangnhap = document.getElementById('submit-login');
+dangky = document.getElementById('submit-register');
+dangnhap = document.getElementById('submit-login');
+const X = document.querySelectorAll(".close-btn");
 
 login.addEventListener('click', () => {
     formlog.style.display = 'flex';
@@ -16,8 +17,13 @@ login.addEventListener('click', () => {
 register.addEventListener('click', () => {
     formsign.style.display = 'flex';
     formlog.style.display = 'none';
-})
+});
 
+X.forEach(function(btn){
+    btn.onclick = function(){
+        btn.parentElement.style.display = "none";
+    }
+});
 
 dangky.addEventListener('click', (event) => {
     event.preventDefault();

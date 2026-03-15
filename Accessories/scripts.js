@@ -7,6 +7,7 @@ formsign = document.getElementById('sign-up-form');
 
 dangky = document.getElementById('submit-register');
 dangnhap = document.getElementById('submit-login');
+const X = document.querySelectorAll(".close-btn");
 
 login.addEventListener('click', () => {
     formlog.style.display = 'flex';
@@ -18,6 +19,11 @@ register.addEventListener('click', () => {
     formlog.style.display = 'none';
 });
 
+X.forEach(function(btn){
+    btn.onclick = function(){
+        btn.parentElement.style.display = "none";
+    }
+});
 
 dangky.addEventListener('click', (event) => {
     event.preventDefault();
