@@ -65,12 +65,23 @@ dangnhap.addEventListener('click', (even) => {
 
     if (storeUser && storeUser.username === username && storeUser.password === password) {
         alert('Đăng nhập thành công!');
+        localStorage.setItem("isLoggedIn", "true");   
         formlog.style.display = 'none';
         account.style.display = 'none';
     }   else {
         alert('Tên đăng nhập hoặc mật khẩu không đúng!');
         return dangnhap;
     }
+});
+
+window.addEventListener("load", function(){
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if(isLoggedIn === "true"){
+        account.style.display = "none";
+    }
+
 });
 
 
